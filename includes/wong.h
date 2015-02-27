@@ -6,7 +6,7 @@
 /*   By: avallete <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/27 21:04:06 by avallete          #+#    #+#             */
-/*   Updated: 2015/02/28 00:05:06 by avallete         ###   ########.fr       */
+/*   Updated: 2015/02/28 00:47:27 by avallete         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,4 +45,20 @@ typedef	struct		s_env
 	t_win			win;
 	t_inf			infos;
 }					t_env;
+
+/*
+** WINDOW
+*/
+void	grep_window_value(t_env *env);
+void	new_window(void);
+void	expose_term(t_env *env);
+
+
+/*
+** DRAW_TAB
+*/
+void	draw_tab(t_env *env);
+void	draw_cross(unsigned int x, unsigned int y,\
+		unsigned maxx, unsigned maxy);
+
 #endif

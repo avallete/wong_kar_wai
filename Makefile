@@ -6,12 +6,14 @@
 #    By: avallete <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/02/18 13:18:20 by avallete          #+#    #+#              #
-#    Updated: 2015/02/27 21:53:05 by avallete         ###   ########.fr        #
+#    Updated: 2015/02/28 00:45:02 by avallete         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRC_PATH:=./src/
-SRC_NAME:=main.c
+SRC_NAME:=	main.c\
+			window.c\
+			draw_tab.c
 CFLAGS=-Wall -Wextra -Werror
 OBJ_PATH =./obj/
 OBJ_NAME=$(SRC_NAME:.c=.o)
