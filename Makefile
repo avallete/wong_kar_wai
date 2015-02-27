@@ -6,7 +6,7 @@
 #    By: avallete <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/02/18 13:18:20 by avallete          #+#    #+#              #
-#    Updated: 2015/02/27 20:59:34 by avallete         ###   ########.fr        #
+#    Updated: 2015/02/27 21:53:05 by avallete         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ SRC=$(addprefix $(SRC_PATH), $(SRC_NAME))
 OBJ=$(addprefix $(OBJ_PATH), $(OBJ_NAME))
 INCF=$(addprefix $(INC_PATH), $(INC_NAME))
 INC=$(addprefix -I, $(INC_PATH))
-LIBFT:=-L libft -lftprintf
+LIBFT:=-L libft -lftprintf -lncurses
 CFLAGS=-Wall -Wextra -Werror
 CC=-gcc
 NAME=game_2048
