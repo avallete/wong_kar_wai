@@ -1,6 +1,5 @@
 #include <wong.h>
 
-
 void	grep_window_value(t_env *env)
 {
 	getmaxyx(stdscr, env->win.win_y, env->win.win_x);
@@ -8,7 +7,10 @@ void	grep_window_value(t_env *env)
 	env->win.win_x--;
 	if (WINX(env) < 12 || WINY(env) < 12)
 	{
-		ft_putsterr("Window size too small\n");
+		clear();
+		refresh();
+		endwin();
+		ft_putsterr("\nWindow size too small\n");
 		env->infos.echap = 1;
 	}
 }
