@@ -21,9 +21,10 @@
 # define WINX(x) (x->win.win_x)
 # define WINY(x) (x->win.win_y)
 # define CASEV(x, y) (env->tab[y][x].value)
-# define CASEX(x, y) (env->tab[y][x].value)
-# define CASEY(x, y) (env->tab[y][x].value)
-# define CASEC(x, y) (env->tab[y][x].value)
+# define CASEX(x, y) (env->tab[y][x].x)
+# define CASEY(x, y) (env->tab[y][x].y)
+# define CASEC(x, y) (env->tab[y][x].color)
+# define CASESTR(x, y) (env->tab[y][x].str)
 # define K_ECHAP 27
 
 typedef enum		e_const
@@ -46,9 +47,10 @@ typedef	struct		s_inf
 typedef struct		s_case
 {
 	int				value;
-	unsigned int	x;
-	unsigned int	y;
+	unsigned int			x;
+	unsigned int			y;
 	int				color;
+	char				*str;
 }					t_case;
 
 typedef	struct		s_env
@@ -73,5 +75,6 @@ void	expose_term(t_env *env);
 void	draw_tab(t_env *env);
 void	draw_cross(unsigned int x, unsigned int y,\
 		unsigned maxx, unsigned maxy);
-
+void	init_tab(t_env *env);
+void	init_tab_place(t_env *env);
 #endif

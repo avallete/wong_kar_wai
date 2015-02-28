@@ -28,7 +28,26 @@ void	play_it(t_env *env)
 		key_hook(env, getch());
 	}
 	if (env->infos.echap)
-		endwin();
+		clear(), refresh(), endwin();
+}
+
+void	init_tab_place(t_env *env)
+{
+	int x;
+	int y;
+
+	y = 0;
+	while (y < 4)
+	{
+		x = 0;
+		while (x < 4)
+		{
+			CASEX(x, y) = ((x + 1) + x) * (WINX(env) / 8);
+			CASEY(x, y) = ((y + 1) + y) * (WINY(env) / 8);
+			x++;
+		}
+		y++;
+	}
 }
 
 void	init_tab(t_env *env)
@@ -44,18 +63,13 @@ void	init_tab(t_env *env)
 		while (x < 4)
 		{
 			CASEV(x, y) = 0;
-			CASEX(x, y) = ((x + 1) * (WINX(env) / 8));
-			printf("%d\n", CASEX(x, y));
-			CASEY(x, y) = ((y + 1) * (WINY(env) / 8));
 			CASEC(x, y) = 0;
-			mvprintw(CASEY(x, y), CASEX(x, y), "0");
-			refresh();
+			CASESTR(x, y) = ft_itoa(0);
 			x++;
 		}
-		refresh();
-		sleep(1);
 		y++;
 	}
+	init_tab_place(env);
 }
 
 int	main(void)
