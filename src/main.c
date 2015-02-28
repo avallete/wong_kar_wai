@@ -50,6 +50,12 @@ void	init_tab_place(t_env *env)
 	}
 }
 
+void	init_case(t_env *env, int x, int y, int value)
+{
+	CASEV(x, y) = 0;
+	CASESTR(x, y) = ft_itoa(value);
+}
+
 void	init_tab(t_env *env)
 {
 	int x;
