@@ -6,7 +6,7 @@
 /*   By: avallete <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/27 21:04:06 by avallete          #+#    #+#             */
-/*   Updated: 2015/02/28 00:47:27 by avallete         ###   ########.fr       */
+/*   Updated: 2015/02/28 01:12:00 by avallete         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,10 @@
 # include <curses.h>
 # define WINX(x) (x->win.win_x)
 # define WINY(x) (x->win.win_y)
+# define CASEV(x, y) (env->tab[y][x].value)
+# define CASEX(x, y) (env->tab[y][x].value)
+# define CASEY(x, y) (env->tab[y][x].value)
+# define CASEC(x, y) (env->tab[y][x].value)
 # define K_ECHAP 27
 
 typedef enum		e_const
@@ -39,11 +43,20 @@ typedef	struct		s_inf
 	int				redraw;
 }					t_inf;
 
+typedef struct		s_case
+{
+	int				value;
+	unsigned int	x;
+	unsigned int	y;
+	int				color;
+}					t_case;
+
 typedef	struct		s_env
 {
 	t_const			def;
 	t_win			win;
 	t_inf			infos;
+	t_case			tab[4][4];
 }					t_env;
 
 /*

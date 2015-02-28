@@ -6,7 +6,7 @@
 /*   By: avallete <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/28 00:37:51 by avallete          #+#    #+#             */
-/*   Updated: 2015/02/28 00:43:56 by avallete         ###   ########.fr       */
+/*   Updated: 2015/02/28 00:56:51 by avallete         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,6 @@ void	grep_window_value(t_env *env)
 void	expose_term(t_env *env)
 {
 	clear();
-	mvprintw(0, 0, "o");
-	mvprintw(1, env->win.win_x, "o");
-	mvprintw(env->win.win_y, 1, "o");
-	mvprintw(env->win.win_y, env->win.win_x, "o");
 	draw_tab(env);
 	refresh();
 }
