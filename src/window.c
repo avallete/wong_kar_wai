@@ -21,7 +21,7 @@ void	grep_window_value(t_env *env)
 		WINX(env)--;
 	if ((WINY(env) % 2) == 0)
 		WINY(env)--;
-	if (WINX(env) < 16 || WINY(env) < 12)
+	if (WINX(env) < 24 || WINY(env) < 11)
 	{
 		clear();
 		refresh();
