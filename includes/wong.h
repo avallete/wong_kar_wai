@@ -77,4 +77,5 @@ void	draw_cross(unsigned int x, unsigned int y,\
 		unsigned maxx, unsigned maxy);
 void	init_tab(t_env *env);
 void	init_tab_place(t_env *env);
+void	init_case(t_env *env, int x, int y, int value);
 #endif

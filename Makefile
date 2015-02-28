@@ -13,7 +13,8 @@
 SRC_PATH:=./src/
 SRC_NAME:=	main.c\
 			window.c\
-			draw_tab.c
+			draw_tab.c\
+			init_tab.c
 CFLAGS=-Wall -Wextra -Werror
 OBJ_PATH =./obj/
 OBJ_NAME=$(SRC_NAME:.c=.o)
